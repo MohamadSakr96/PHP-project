@@ -13,8 +13,14 @@
 
 body {
 	background-color: var(--color-DimGrey);
-	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	padding-top: 2rem;
+	align-self: center;
 }
 
 .container {
@@ -28,13 +34,64 @@ body {
 	flex-direction: column;
 	flex: 1;
 	margin: 1rem;
+	width: 100%;
 }
 
 .container > div > div {
 	display: flex;
 	flex-direction: column;
+	background-color: var(--color-Blue);
 	flex: 1;
-	margin: 2rem 1rem;
-	border: 10px solid var(--color-Blue);
+	padding: 2rem 1rem;
+	margin: 1rem 0;
 	border-radius: 10px;
+}
+
+h3 {
+	margin: 1rem 0;
+}
+label {
+	margin: 0.5rem 0;
+}
+
+input {
+	margin: 0.5rem 0;
+	background-color: var(--color-Ash);
+	border: 1px solid var(--color-DimGrey);
+	border-radius: 10px;
+	height: 2rem;
+	width: 100%;
+}
+
+textarea {
+	margin: 0.5rem 0;
+	background-color: var(--color-Ash);
+	border: 1px solid var(--color-DimGrey);
+	border-radius: 10px;
+	width: 100%;
+	height: 7.2rem;
+}
+
+button {
+	background-color: white;
+	border: 0;
+	border-radius: 10px;
+	margin: 0.5rem 0;
+	height: 2rem;
+	width: min(50%, 200px);
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: var(--color-DimGrey);
+	color: var(--color-Ash);
+}
+
+@media screen and (max-width: 650px) {
+	.container {
+		flex-direction: column;
+	}
+	.container > div {
+		margin: 0;
+	}
 }
