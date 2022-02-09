@@ -1,5 +1,7 @@
 <?php 
 
+header("Access-Control-Allow-Origin: *");
+
 $palin = $_GET['string'];
 
 function checkPalindrome($s) {

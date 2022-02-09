@@ -1,5 +1,7 @@
 <?php 
 
+header("Access-Control-Allow-Origin: *");
+
 $x = (int)$_GET['x'];
 $y = (int)$_GET['y'];
 
