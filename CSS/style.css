@@ -55,6 +55,8 @@ label {
 }
 
 input {
+	outline: none;
+	padding: 0 1rem;
 	margin: 0.5rem 0;
 	background-color: var(--color-Ash);
 	border: 1px solid var(--color-DimGrey);
@@ -72,6 +74,10 @@ textarea {
 	height: 7.2rem;
 }
 
+.container-result {
+	position: relative;
+}
+
 button {
 	background-color: white;
 	border: 0;
@@ -85,6 +91,16 @@ button:hover {
 	cursor: pointer;
 	background-color: var(--color-DimGrey);
 	color: var(--color-Ash);
+}
+
+.result {
+	position: absolute;
+	left: 50%;
+	top: 0.5rem;
+	background-color: var(--color-Blue);
+	border-radius: 10px;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+	padding: 0.5rem 1rem;
 }
 
 @media screen and (max-width: 650px) {
