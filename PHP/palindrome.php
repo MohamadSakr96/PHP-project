@@ -2,15 +2,18 @@
 
 $palin = $_GET['string'];
 
-function checkPalindrom($s) {
+function checkPalindrome($s) {
     if (strrev($s) == $s) {
-        return true;
+        return 1;
     }else {
-        return false;
+        return 0;
     }
 }
 
-$palindrome_array = array('string' => $);
+$isPalindrome = checkPalindrome($palin);
 
+$palindrome_array = array('string' => $isPalindrome);
+
+echo json_encode($palindrome_array);
 
 ?>
