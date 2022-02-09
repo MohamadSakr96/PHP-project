@@ -11,7 +11,7 @@ function calcNumbers($a,$b) {
 
 $z = calcNumbers($x, $y);
 
-$number = array('number' => $z);
+$number = array('first_number' => $x, 'second_number' => $y,'result_number' => $z);
 
 echo json_encode($number);
 
