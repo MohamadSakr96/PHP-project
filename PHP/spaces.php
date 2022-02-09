@@ -4,11 +4,11 @@ header("Access-Control-Allow-Origin: *");
 
 $paragraph = $_GET['text'];
 
-function trimText($text) {
-    return trim($text);
+function removeWhiteSpaces($text) {
+    return preg_replace('/\s+/', ' ', $text);
 }
 
-$result_text = trimText($paragraph);
+$result_text = removeWhiteSpaces($paragraph);
 
 $result = array('text' => $result_text);
 

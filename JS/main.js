@@ -5,6 +5,15 @@ let API_password_link = "";
 
 document.getElementById("submit_number").addEventListener("click", getNumber);
 document.getElementById("submit_string").addEventListener("click", getString);
+document.getElementById("submit_text").addEventListener("click", getText);
+
+function getText() {
+    let text = document.getElementById("text").value;
+    alert(typeof(text));
+    let API_spaces_link = `http://localhost/PHP-project/PHP/spaces.php?text=${text}`;
+    
+    fetchData(API_spaces_link, "text");
+}
 
 function getString() {
     let str = document.getElementById("string").value;
@@ -30,6 +39,8 @@ async function fetchData(url, data_type) {
         renderNumber(data);
     }else if (data_type === "string") {
         renderString(data);
+    }else if (data_type === "text") {
+        renderText(data);
     }
 }
 
@@ -41,4 +52,7 @@ function renderString (data_string) {
     console.log(data_string);
 }
 
+function renderText (data_text) {
+    console.log(data_text);
+}
 
