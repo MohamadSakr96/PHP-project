@@ -1,7 +1,3 @@
-// let API_number_link = "http://localhost/PHP-project/PHP/getNumber.php?x=&y=";
-let API_palindrom_link = "http://localhost/PHP-project/PHP/palindrome.php?string=";
-let API_spaces_link = "";
-let API_password_link = "";
 
 document.getElementById("submit_number").addEventListener("click", getNumber);
 document.getElementById("submit_string").addEventListener("click", getString);
@@ -54,18 +50,38 @@ async function fetchData(url, data_type) {
 }
 
 function renderNumber(data_number) {
-    console.log(data_number);
+    let result_number = data_number['result_number'];
+    let element = document.getElementById("result_number");
+    element.classList.add("result");
+    element.innerHTML = `Your Result is ${result_number} `;
 }
 
 function renderString (data_string) {
-    console.log(data_string);
+    let result_string = data_string['state'];
+    let element = document.getElementById("result_string");
+    element.classList.add("result");
+    if (result_string) {
+        element.innerHTML = "Your String is Palindrome";
+    }else {
+        element.innerHTML = "Your String is Not Palindrome";
+    }
 }
 
 function renderText (data_text) {
-    console.log(data_text);
+    let result_text = data_text['text'];
+    let element = document.getElementById("result_text");
+    element.classList.add("result");
+    element.innerHTML = `${result_text}`;
 }
 
 function renderPassword (data_password) {
-    console.log(data_password);
+    let result_password = data_password['state'];
+    let element = document.getElementById("result_password");
+    element.classList.add("result");
+    if (result_password) {
+        element.innerHTML = "Strong Password";
+    }else {
+        element.innerHTML = "Weak Password";
+    }
 }
 
