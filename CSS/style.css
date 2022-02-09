@@ -8,7 +8,7 @@
 	--color-DimGrey: #696773;
 	--color-Blue: #819595;
 	--color-Ash: #b1b6a6;
-	--color-Black: #000000;
+	--color-Black: #0f0e0e;
 }
 
 body {
@@ -16,11 +16,13 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	display: flex;
 	flex-direction: column;
+	color: var(--color-Black);
 }
 
 h1 {
 	padding-top: 2rem;
 	align-self: center;
+	font-weight: 800;
 }
 
 .container {
@@ -48,6 +50,7 @@ h1 {
 }
 
 h3 {
+	font-weight: 700;
 	margin: 1rem 0;
 }
 label {
@@ -95,12 +98,15 @@ button:hover {
 
 .result {
 	position: absolute;
-	left: 50%;
+	right: 0px;
 	top: 0.5rem;
-	background-color: var(--color-Blue);
+	background-color: var(--color-Black);
+	color: var(--color-Ash);
 	border-radius: 10px;
 	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
 	padding: 0.5rem 1rem;
+	width: min(50%, 300px);
+	text-align: center;
 }
 
 @media screen and (max-width: 650px) {
