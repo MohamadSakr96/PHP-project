@@ -6,10 +6,17 @@ let API_password_link = "";
 document.getElementById("submit_number").addEventListener("click", getNumber);
 document.getElementById("submit_string").addEventListener("click", getString);
 document.getElementById("submit_text").addEventListener("click", getText);
+document.getElementById("submit_password").addEventListener("click", getPassword);
+
+function getPassword() {
+    let password = document.getElementById("password").value;
+    let API_password_link = `http://localhost/PHP-project/PHP/password.php?password=${password}`;
+
+    fetchData(API_password_link, "password");
+}
 
 function getText() {
     let text = document.getElementById("text").value;
-    alert(typeof(text));
     let API_spaces_link = `http://localhost/PHP-project/PHP/spaces.php?text=${text}`;
     
     fetchData(API_spaces_link, "text");
@@ -41,6 +48,8 @@ async function fetchData(url, data_type) {
         renderString(data);
     }else if (data_type === "text") {
         renderText(data);
+    }else if (data_type === "password") {
+        renderPassword(data);        
     }
 }
 
@@ -54,5 +63,9 @@ function renderString (data_string) {
 
 function renderText (data_text) {
     console.log(data_text);
+}
+
+function renderPassword (data_password) {
+    console.log(data_password);
 }
 

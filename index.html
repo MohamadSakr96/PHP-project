@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>PHP-Project</title>
 </head>
 <body>
+    <h1>Test My API</h1>
     <div class="container">
-        <h1>Test My API</h1>
-        <div class="container-number">
-            <h3>Enter Numbers</h3>
-            <label for="first_number">Enter first number</label>
-            <input type="number" id="first_number">
-            <label for="second_number">Enter second number</label>
-            <input type="number" id="second_number">
-            <button type="button" id="submit_number">Submit</button>
+        <div class="container-left">
+            <div class="container-number">
+                <h3>Enter Numbers</h3>
+                <label for="first_number">Enter first number</label>
+                <input type="number" id="first_number">
+                <label for="second_number">Enter second number</label>
+                <input type="number" id="second_number">
+                <button type="button" id="submit_number">Submit</button>
+            </div>
+            <div class="container-palindrome">
+                <h3>Check if Palindrome</h3>
+                <label for="string">Enter a string</label>
+                <input type="text" id="string">
+                <button type="button" id="submit_string">Submit</button>
+            </div>
         </div>
-        <div class="container-palindrome">
-            <h3>Check if Palindrome</h3>
-            <label for="string">Enter a string</label>
-            <input type="text" id="string">
-            <button type="button" id="submit_string">Submit</button>
+        <div class="container-right">
+            <div class="container-space">
+                <h3>Fix your Paragraph</h3>
+                <label for="text">Enter a paragraph</label>
+                <textarea name="text" id="text" cols="20" rows="5"></textarea>
+                <button type="button" id="submit_text">Submit</button>
+            </div>
+            <div class="container-password">
+                <h3>Enter a Password</h3>
+                <label for="password"></label>
+                <input type="password" id="password">
+                <button type="button" id="submit_password">Submit</button>
+            </div> 
         </div>
-        <div class="container-space">
-            <h3>Fix your Paragraph</h3>
-            <label for="text">Enter a paragraph</label>
-            <textarea name="text" id="text" cols="30" rows="10"></textarea>
-            <button type="button" id="submit_text">Submit</button>
-        </div>
-        <div class="container-password">
-            <h3>Enter a Password</h3>
-            <label for="password"></label>
-            <input type="password" id="password">
-            <button type="button" id="submit_password">Submit</button>
-        </div> 
     </div>
 
 
