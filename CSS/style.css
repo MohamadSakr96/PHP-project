@@ -109,6 +109,10 @@ button:hover {
 	text-align: center;
 }
 
+.border-red {
+	border-color: red;
+}
+
 @media screen and (max-width: 650px) {
 	.container {
 		flex-direction: column;

@@ -19,19 +19,35 @@ function getText() {
 }
 
 function getString() {
-    let str = document.getElementById("string").value;
+    let input = document.getElementById("string");
+    let str = input.value;
     let API_palindrom_link = `http://localhost/PHP-project/PHP/palindrome.php?string=${str}`;
 
-    fetchData(API_palindrom_link, "string");
+    if (str.length === 0) {
+        input.classList.add("border-red");
+        input.placeholder = "Please Enter a String";
+    }else {
+        input.classList.remove("border-red");
+        fetchData(API_palindrom_link, "string");
+    }
 }
 
 function getNumber() {
-    let x = document.getElementById("first_number").value;
-    let y = document.getElementById("second_number").value;
+    let input_x = document.getElementById("first_number");
+    let input_y = document.getElementById("second_number");
+    let x = input_x.value;
+    let y = input_y.value;
 
     let API_number_link = `http://localhost/PHP-project/PHP/getNumber.php?x=${x}&y=${y}`;
-
-    fetchData(API_number_link,"number");
+    
+    if (x == "" || y == "") {
+        input_x.classList.add("border-red");
+        input_y.classList.add("border-red");
+    }else {
+        input_x.classList.remove("border-red");
+        input_y.classList.remove("border-red")
+        fetchData(API_number_link,"number");
+    }
 }
 
 async function fetchData(url, data_type) {
