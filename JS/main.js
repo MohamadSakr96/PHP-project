@@ -1,9 +1,11 @@
-
+// adding event listeners when a submit button is pressed
 document.getElementById("submit_number").addEventListener("click", getNumber);
 document.getElementById("submit_string").addEventListener("click", getString);
 document.getElementById("submit_text").addEventListener("click", getText);
 document.getElementById("submit_password").addEventListener("click", getPassword);
 
+// this section after any button if pressed
+// these functions will create a link to fetch the data from an API
 function getPassword() {
     let password = document.getElementById("password").value;
     let API_password_link = `http://localhost/PHP-project/PHP/password.php?password=${password}`;
@@ -40,6 +42,8 @@ function getNumber() {
 
     let API_number_link = `http://localhost/PHP-project/PHP/getNumber.php?x=${x}&y=${y}`;
     
+    // to check if the user didn't pass in an input or invalid number 
+    // note: for input type="number" the user can still pass in "e" or "."
     if (x == "" || y == "") {
         input_x.classList.add("border-red");
         input_y.classList.add("border-red");
@@ -50,6 +54,7 @@ function getNumber() {
     }
 }
 
+// takes the URL created above and fetch the data from APIs
 async function fetchData(url, data_type) {
     let result = await fetch(url);
     let data = await result.json();
@@ -64,6 +69,8 @@ async function fetchData(url, data_type) {
         renderPassword(data);        
     }
 }
+
+// after fetching the data this section will render it to the html page
 
 function renderNumber(data_number) {
     let result_number = data_number['result_number'];
